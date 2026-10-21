@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  color: #e2e8f0;
+  background: #090d16;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+* { box-sizing: border-box; }
+body { min-width: 320px; min-height: 100vh; margin: 0; }
+button, input { font: inherit; }
+button:disabled { cursor: not-allowed; opacity: 0.45; }
+
+.glow {
+  position: absolute;
+  width: 28rem;
+  height: 28rem;
+  border-radius: 9999px;
+  filter: blur(100px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+.glow-one { top: -17rem; left: calc(50% - 25rem); background: #7657ff; }
+.glow-two { right: calc(50% - 32rem); bottom: -20rem; background: #3978e8; }
+
+.text-input {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.65rem;
+  background: rgba(3, 7, 18, 0.55);
+  padding: 0.7rem 0.85rem;
+  color: #f8fafc;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 150ms ease;
+}
+.text-input::placeholder { color: #64748b; }
+.text-input:focus { border-color: rgba(139, 124, 255, 0.65); }
+
+.primary-button, .secondary-button, .text-button, .icon-button, .send-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.65rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+.primary-button { border: 1px solid #8b7cff; background: #8b7cff; padding: 0.7rem 1rem; color: #0b0b18; }
+.primary-button:hover:not(:disabled) { background: #a196ff; }
+.secondary-button { border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); padding: 0.65rem 0.9rem; color: #e2e8f0; }
+.secondary-button:hover:not(:disabled) { border-color: rgba(255,255,255,.24); background: rgba(255,255,255,.08); }
+.text-button { padding: 0.6rem 0.75rem; color: #94a3b8; }
+.text-button:hover { color: #fda4af; }
+.icon-button { height: 2.4rem; width: 2.4rem; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); color: #94a3b8; }
+.icon-button:hover { color: white; background: rgba(255,255,255,.08); }
+.send-button { height: 2.5rem; width: 2.5rem; background: #8b7cff; color: #0b0b18; }
+.send-button:hover:not(:disabled) { background: #a196ff; }
+
+.tab-button { display: inline-flex; align-items: center; gap: 0.55rem; border-bottom: 2px solid transparent; padding: 1rem 0.75rem; color: #64748b; font-size: 0.8125rem; }
+.tab-button:hover { color: #cbd5e1; }
+.tab-button-active { border-color: #8b7cff; color: #eeeaff; }
+.poll-option { position: relative; width: 100%; overflow: hidden; border: 1px solid rgba(255,255,255,.09); border-radius: .75rem; background: rgba(255,255,255,.025); padding: 1rem 1.1rem; text-align: left; transition: border-color 150ms ease, background 150ms ease; }
+
+::selection { background: rgba(139, 124, 255, .35); }
